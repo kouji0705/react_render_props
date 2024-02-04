@@ -3,10 +3,10 @@ import { Counter } from './Counter';
 
 export const App = () => (
   <Counter>
-    {(count, setCount) => (
+    {(count, handleClick) => (
       <div>
         <p>カウント: {count}</p>
-        <button onClick={() => setCount(count + 1)}>増加</button>
+        <button onClick={handleClick}>増加</button>
       </div>
     )}
   </Counter>

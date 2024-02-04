@@ -4,12 +4,15 @@ import React, { useState } from 'react';
 type CounterProps = {
   children: (
     count: number,
-    setCount: React.Dispatch<React.SetStateAction<number>>
+    handleClick: () => void // カウントを増加させる関数の型を追加
   ) => React.ReactNode;
 };
 
 export const Counter: React.FC<CounterProps> = ({ children }) => {
   const [count, setCount] = useState(0);
 
-  return <>{children(count, setCount)}</>;
+  // カウントを増加させる関数
+  const handleClick = () => setCount(count + 1);
+
+  return <>{children(count, handleClick)}</>;
 };
